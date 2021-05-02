@@ -32,3 +32,8 @@ export async function deleteLocalFiles(files:Array<string>){
         fs.unlinkSync(file);
     }
 }
+
+export async function isValidImageUrl(url: string): Promise<boolean> {
+    const imageUrlPattern = /^http.*\.(jpeg|jpg|gif|png)$/;
+    return url.match(imageUrlPattern) != null;
+  }
